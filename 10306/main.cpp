@@ -1,9 +1,19 @@
 #include <iostream>
 #include "math.h"
 #include "vector"
+#include <limits>
+
 using namespace std;
-double emoulusSq(int x, int y){
+int emoulusSq(int x, int y){
 	return (x*x+y*y);
+}
+int findSmallestSq(vector<pair<int,int> > v){
+	int smallest=numeric_limits<int>::max();
+	for (pair<int,int> coin : v){
+		if (emoulusSq(coin.first,coin.second)<smallest)
+			smallest=emoulusSq(coin.first,coin.second);
+	}
+	return smallest;
 }
 int main(int argc, char const *argv[])
 {
@@ -19,9 +29,16 @@ int main(int argc, char const *argv[])
 			cin >> convalue >> infovalue;
 			v.push_back(make_pair(convalue,infovalue));
 		}
-
+		int smallest=findSmallestSq(v);
+		vector<vector<int> > v;
+		for (int k=0; k<100000;++k){
+			vector<int> innerV;
+			for (int l=0; l<ecointypes; ++l){
+				innerV.push_back()
+			}
+		}
 
 	}
 
 	return 0;
-}
+}stdq
